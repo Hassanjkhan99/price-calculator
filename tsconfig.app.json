@@ -3,7 +3,13 @@
   "extends": "./tsconfig.json",
   "compilerOptions": {
     "outDir": "./out-tsc/app",
-    "types": []
+    "types": [],
+    "baseUrl": "src",
+    "paths": {
+      "@shared/*": ["./app/core/shared/*"],
+      "@theme/*": ["./app/core/shared/theme/*"],
+      "@price-calculator/*": ["./app/components/price-calculator/*"],
+    }
   },
   "files": [
     "src/main.ts",
