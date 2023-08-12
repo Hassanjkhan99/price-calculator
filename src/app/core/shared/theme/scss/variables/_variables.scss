@@ -1,0 +1,26 @@
+@use '@angular/material' as mat;
+@import "src/app/core/shared/theme/plaette/blue-palette";
+@import "src/app/core/shared/theme/plaette/light-orange-palette";
+@import "src/app/core/shared/theme/plaette/red-palette";
+@include mat.core();
+
+$cw-dark-theme-background: #000000;
+$cw-light-theme-background: #F2F2F2F2;
+$dark-background-2: #0F0F0F;
+
+$primary-color-light:  #3549be;
+$accent-color-light:  #dc5e5e;
+$warn-color-light:  #660000;
+
+
+$primary-color-dark:  #394aae;
+$accent-color-dark:  #d85353;
+$warn-color-dark:  #660000;
+
+$cw-primary-light: mat.define-palette($cw-blue-palette,500);
+$cw-accent-light: mat.define-palette($cw-light-orange-palette, 600);
+$cw-warn-light: mat.define-palette($cw-red-palette,500);
+
+$cw-primary-dark: mat.define-palette($cw-blue-palette,600);
+$cw-accent-dark: mat.define-palette($cw-light-orange-palette, 700);
+$cw-warn-dark: mat.define-palette($cw-red-palette,500);

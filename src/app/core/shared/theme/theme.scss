@@ -1,0 +1,38 @@
+@use '@angular/material' as mat;
+
+@import "src/app/core/shared/theme/scss/variables/variables";
+
+
+$cw-light-theme: mat.define-light-theme((
+  color: (
+    primary: $cw-primary-light,
+    accent: $cw-accent-light,
+    warn: $cw-warn-light,
+    '--mdc-elevated-card-container-color': #FF0000
+  ),
+  density: -1
+));
+
+$cw-dark-theme: mat.define-dark-theme((
+  color: (
+    primary: $cw-primary-dark,
+    accent: $cw-accent-dark,
+    warn: $cw-warn-dark,
+    '--mdc-elevated-card-container-color': #FF0000
+  ),
+  density: 0
+));
+
+.dark-theme {
+  @include mat.all-component-themes($cw-dark-theme);
+}
+
+@include mat.all-component-themes($cw-light-theme);
+
+
+.light-theme {
+  background-color: $cw-light-theme-background ;
+}
+.mat-toolbar.mat-primary {
+  background-color: red !important;
+}

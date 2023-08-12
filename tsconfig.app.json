@@ -1,0 +1,21 @@
+/* To learn more about this file see: https://angular.io/config/tsconfig. */
+{
+  "extends": "./tsconfig.json",
+  "compilerOptions": {
+    "outDir": "./out-tsc/app",
+    "types": [],
+    "baseUrl": "src",
+    "paths": {
+      "@shared/*": ["./app/core/shared/*"],
+      "@theme/*": ["./app/core/shared/theme/*"],
+      "@price-calculator/*": ["./app/components/price-calculator/*"],
+    }
+  },
+  "files": [
+    "src/main.ts"
+  ],
+  "include": [
+    "src/**/*.d.ts"
+  ],
+
+}
