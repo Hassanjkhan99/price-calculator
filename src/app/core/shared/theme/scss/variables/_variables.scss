@@ -1,12 +1,16 @@
 @use '@angular/material' as mat;
-@import "src/app/core/shared/theme/plaette/blue-palette";
-@import "src/app/core/shared/theme/plaette/light-orange-palette";
-@import "src/app/core/shared/theme/plaette/red-palette";
+@import "./app/core/shared/theme/palette/blue-palette";
+@import "./app/core/shared/theme/palette/light-orange-palette";
+@import "./app/core/shared/theme/palette/red-palette";
 @include mat.core();
 
 $cw-dark-theme-background: #000000;
+$cw-dark-theme-background-2: #0A0A0A;
 $cw-light-theme-background: #F2F2F2F2;
-$dark-background-2: #0F0F0F;
+$cw-light-theme-background-2: #FFFFFFFF;
+
+$background: $cw-light-theme-background;
+$background-lighter: $cw-light-theme-background-2;
 
 $primary-color-light:  #3549be;
 $accent-color-light:  #dc5e5e;
@@ -17,10 +21,11 @@ $primary-color-dark:  #394aae;
 $accent-color-dark:  #d85353;
 $warn-color-dark:  #660000;
 
-$cw-primary-light: mat.define-palette($cw-blue-palette,500);
-$cw-accent-light: mat.define-palette($cw-light-orange-palette, 600);
-$cw-warn-light: mat.define-palette($cw-red-palette,500);
+$cw-primary-light: mat.define-palette($cw-blue-palette);
+$cw-accent-light: mat.define-palette($cw-light-orange-palette);
+$cw-warn-light: mat.define-palette($cw-red-palette);
 
-$cw-primary-dark: mat.define-palette($cw-blue-palette,600);
-$cw-accent-dark: mat.define-palette($cw-light-orange-palette, 700);
-$cw-warn-dark: mat.define-palette($cw-red-palette,500);
+$cw-primary-dark: mat.define-palette(mat.$cyan-palette );
+$cw-accent-dark: mat.define-palette($cw-light-orange-palette);
+$cw-warn-dark: mat.define-palette($cw-red-palette);
+

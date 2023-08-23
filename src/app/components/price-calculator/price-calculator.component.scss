@@ -1,7 +1,10 @@
+
 .price-calculator{
   display: flex;
   justify-content: center;
   align-items: center;
-  min-height: 99vh;
-  min-width: 99vw;
+}
+.calculator-pages{
+  width: 50vw;
+  height: 90vh;
 }

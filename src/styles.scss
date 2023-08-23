@@ -1,39 +1,46 @@
-
-// Custom Theming for Angular Material
-// For more information: https://material.angular.io/guide/theming
 @use '@angular/material' as mat;
-// Plus imports for other components in your app.
-
-// Include the common styles for Angular Material. We include this here so that you only
-// have to load a single css file for Angular Material in your app.
-// Be sure that you only ever include this mixin once!
-@include mat.core();
-
-// Define the palettes for your theme using the Material Design palettes available in palette.scss
-// (imported above). For each palette, you can optionally specify a default, lighter, and darker
-// hue. Available color palettes: https://material.io/design/color/
-$price-calculator-primary: mat.define-palette(mat.$indigo-palette);
-$price-calculator-accent: mat.define-palette(mat.$pink-palette, A200, A100, A400);
-
-// The warn palette is optional (defaults to red).
-$price-calculator-warn: mat.define-palette(mat.$red-palette);
-
-// Create the theme object. A theme consists of configurations for individual
-// theming systems such as "color" or "typography".
-$price-calculator-theme: mat.define-light-theme((
-  color: (
-    primary: $price-calculator-primary,
-    accent: $price-calculator-accent,
-    warn: $price-calculator-warn,
-  )
-));
-
-// Include theme styles for core and each component used in your app.
-// Alternatively, you can import and @include the theme mixins for each component
-// that you are using.
-@include mat.all-component-themes($price-calculator-theme);
-
-/* You can add global styles to this file, and also import other style files */
-
+@import '@angular/material/theming';
 html, body { height: 100%; }
 body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+.calculations-viewer, calculations-editor{
+  padding: 20px;
+}
+@import "app/core/shared/theme/scss/variables/variables";
+
+.dark-theme {
+  .calculations-viewer {
+    background: $cw-dark-theme-background !important; // Define your dark theme background color here
+  }
+  .calculations-editor {
+    background: $cw-dark-theme-background-2 !important; // Define your dark theme background color here
+  }
+}
+
+
+
+@import "src/app/core/shared/theme/scss/variables/variables";
+
+
+$cw-light-theme: mat.define-light-theme((
+  color: (
+    primary: $cw-primary-light,
+    accent: $cw-accent-light,
+    warn: $cw-warn-light,
+  ),
+));
+
+$cw-dark-theme: mat.define-dark-theme((
+  color: (
+    primary: $cw-primary-dark,
+    accent: $cw-accent-dark,
+    warn: $cw-warn-dark,
+  )
+));
+// Apply the dark theme by default
+@include angular-material-theme($cw-light-theme);
+
+
+
+.dark-theme{
+  @include angular-material-theme($cw-dark-theme);
+}

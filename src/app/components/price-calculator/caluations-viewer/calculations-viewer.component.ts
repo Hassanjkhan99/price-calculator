@@ -1,8 +1,9 @@
-import {ChangeDetectionStrategy, ChangeDetectorRef, Component, OnInit} from '@angular/core';
+import {ChangeDetectionStrategy, ChangeDetectorRef, Component, OnInit, Renderer2} from '@angular/core';
 import { CommonModule } from '@angular/common';
 import {ButtonComponent} from "@shared/theme/button/button.component";
 import {OverlayContainer} from "@angular/cdk/overlay";
 import {MatButtonModule} from "@angular/material/button";
+import {animate, state, style, transition, trigger} from "@angular/animations";
 
 @Component({
   selector: 'cw-calculations-viewer',
@@ -14,14 +15,16 @@ import {MatButtonModule} from "@angular/material/button";
 })
 export class CalculationsViewerComponent implements OnInit {
 
-  constructor(private overlayContainer: OverlayContainer, private readonly cdr: ChangeDetectorRef) {}
+  constructor(private readonly cdr: ChangeDetectorRef) {}
+
 
   toggleTheme() {
-    const body = document.querySelector('body')!;
+    const body = document.querySelector('html')!;
     body.classList.toggle('dark-theme');
     this.cdr.detectChanges();
   }
-  ngOnInit(): void {
+  ngOnInit() {
+
   }
 
 }
